@@ -38,11 +38,17 @@ public class SignUp extends AppCompatActivity {
                 EditText passwordBox = findViewById(R.id.passwordTxt);
                 String password = passwordBox.getText().toString();
 
-                String[] loginDetails = {name, email, password};
+                if(password.length() >= 8) {
 
-                Intent intent = new Intent(SignUp.this, Personal.class);
-                intent.putExtra("LoginDetails", loginDetails);
-                startActivity(intent);
+
+                    Intent intent = new Intent(SignUp.this, Personal.class);
+                    intent.putExtra("name", name);
+                    intent.putExtra("email", email);
+                    intent.putExtra("password", password);
+                    startActivity(intent);
+                }
+
+
             }
         });
     }

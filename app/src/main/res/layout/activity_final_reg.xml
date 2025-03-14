@@ -50,4 +50,36 @@
         app:layout_constraintEnd_toEndOf="parent"
         app:layout_constraintStart_toStartOf="parent"
         app:layout_constraintTop_toTopOf="parent" />
+
+    <EditText
+        android:id="@+id/timeTxt"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_marginStart="45dp"
+        android:layout_marginTop="75dp"
+        android:background="@drawable/edit_round"
+        android:ems="10"
+        android:inputType="number"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toBottomOf="@+id/tarWeightBox" />
+
+    <EditText
+        android:id="@+id/tarWeightBox"
+        android:layout_width="83dp"
+        android:layout_height="33dp"
+        android:layout_marginStart="45dp"
+        android:layout_marginTop="75dp"
+        android:background="@drawable/edit_round"
+        android:ems="10"
+        android:inputType="number"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toBottomOf="@+id/textView" />
+
+    <Button
+        android:id="@+id/finRegBtn"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:text="Register"
+        tools:layout_editor_absoluteX="151dp"
+        tools:layout_editor_absoluteY="372dp" />
 </androidx.constraintlayout.widget.ConstraintLayout>

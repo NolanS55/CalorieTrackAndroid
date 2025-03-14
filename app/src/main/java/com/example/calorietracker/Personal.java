@@ -30,26 +30,34 @@ public class Personal extends AppCompatActivity {
             public void onClick(View v) {
 
                 EditText weightBox = findViewById(R.id.WeightTxt);
-                String weight = weightBox.getText().toString();
+                String weightString = weightBox.getText().toString();
 
                 EditText heightBox = findViewById(R.id.heightTxt);
-                String height = heightBox.getText().toString();
+                String heightString = heightBox.getText().toString();
 
                 EditText ageBox = findViewById(R.id.ageTxt);
-                String age = ageBox.getText().toString();
+                String ageString = ageBox.getText().toString();
 
                 EditText genderBox = findViewById(R.id.genderTxt);
-                String gender = genderBox.getText().toString();
+                String genderString = genderBox.getText().toString();
 
-                String[] personalDetails = {weight, height, age, gender};
+                EditText addressBox = findViewById(R.id.addressTxt);
+                String address = addressBox.getText().toString();
+                int weight = Integer.parseInt(weightString);
+                int height = Integer.parseInt(heightString);
+                int age = Integer.parseInt(ageString);
+                int gender = Integer.parseInt(genderString);
 
                 Intent current = getIntent();
-
-
-
+                
                 Intent intent = new Intent(Personal.this, finalReg.class);
-                intent.putExtra("LoginDetails", current.getStringArrayExtra("LoginDetails"));
-                intent.putExtra("PersonalDetails", personalDetails);
+                intent.putExtra("name", current.getStringExtra("name"));
+                intent.putExtra("email", current.getStringExtra("email"));
+                intent.putExtra("password", current.getStringExtra("password"));
+                intent.putExtra("weight", weight);
+                intent.putExtra("height", height);
+                intent.putExtra("age", age);
+                intent.putExtra("gender", gender);
                 startActivity(intent);
             }
         });
